@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>你好</title>
+</head>
+<body>
+	<form action="/page" method="post">
+		用户名：<br>
+		<input name="username" type="text"><br>
+		请输入文本：<br>
+		<textarea name="usertext"></textarea><br>
+		<input type="submit" value="提交">
+		你输入的是 {{.Name}}
+	</form>
+</body>
+</html>

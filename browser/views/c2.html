@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Switch</title>
+<script type="text/javascript">
+var wsServer = 'ws://localhost:9090';
+var websocket = new WebSocket(wsServer);
+websocket.onopen = function (evt) {
+    console.log("Connected to WebSocket server.");
+};
+ 
+websocket.onclose = function (evt) {
+    console.log("Disconnected");
+};
+ 
+websocket.onmessage = function (evt) {
+    console.log('Retrieved data from server: ' + evt.data);
+};
+ 
+websocket.onerror = function (evt, e) {
+    console.log('Error occured: ' + evt.data);
+};
+</script>
+</head>
+<body>
+<h1>name is: {{.Name}}</h1>
+</body>
+</html>
