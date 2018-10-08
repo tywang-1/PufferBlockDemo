@@ -4,7 +4,7 @@ package main
 import (
 	"myrepo/PufferBlock/server/action"
 	"myrepo/PufferBlock/server/webserver"
-	//"myrepo/PufferBlock/server/websockets"
+	"myrepo/PufferBlock/server/websockets"
 	"time"
 )
 
@@ -12,12 +12,17 @@ import (
 func main() {
 	//初始化网络
 	//action.Init()
-	action.InitUser(0, "c")
+	//action.GetBlockInfo(0,0)
+	//action.InitUser(3, "test")
+	//action.InitUser(0, "bbb")
+	//action.InitUser(0, "ccc")
+	//action.InitUser(0, "ddd")
+
 	//time.Sleep(time.Second * 3)
 	//action.QueryAll(0)
 	//action.GetHistory(0,"a")
 	//建立连接，接受请求并回复
-	//websockets.Websockets()
+	websockets.Websockets()
 	//websockets.Websockets1()
     //testAction()
 	//测试

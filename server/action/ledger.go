@@ -11,6 +11,7 @@ var command = "/bin/bash"
 var commandArg = "-c"
 var subCommand = "bash"
 var ledgerScript = "ledger.sh"
+var blockScript = "block.sh"
 
 //初始化账户
 func initUser(peer int, name string) (Response, error) {
@@ -75,4 +76,13 @@ func getHistory(peer int, opName string) (Response, error) {
 	out := string(outAsBytes)
 	fmt.Println(out)
 	return Response{true, "", out}, nil
+}
+
+func getBlockInfo(peer int,number int) (int) {
+	cmd := subCommand + " " + blockScript + " " + strconv.Itoa(peer) + " " + "getBlockInfo" + " " + strconv.Itoa(number)
+	outAsBytes, err := exec.Command(command, commandArg, cmd).Output()
+	if outAsBytes!=nil||err!=nil {
+		return number
+	}   
+	return number 
 }

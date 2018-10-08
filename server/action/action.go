@@ -1,6 +1,10 @@
 //Package action 定义了操作网络和操作账本的方法
 package action
 
+import (
+	"fmt"
+)
+
 //Response 回复结构
 type Response struct {
 	IfSuccessful bool   `json:"ifsuccessful"`
@@ -37,6 +41,14 @@ func GetHistory(peer int, opName string) (Response, error) {
 	return getHistory(peer, opName)
 }
 
+//GetBlockInfo 
+func GetBlockInfo(peer int,number int)(int){
+	for{
+		getBlockInfo(peer,number)
+		fmt.Println(number)
+		number++
+	} 
+}
 //InitNetwork 初始化网络接口
 func InitNetwork() {
 

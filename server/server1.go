@@ -15,6 +15,7 @@ func main() {
 
 	//建立连接，接受请求并回复
 	websockets.Websockets1()
+	//action.InitUser(0, "bye")
     //testAction()
 	//测试
 	//testAction
